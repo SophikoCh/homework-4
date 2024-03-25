@@ -1,0 +1,105 @@
+<section >
+    <div class="forms-cont" >
+        <div class="logo-container">
+            <img src="../../assets/photos/logo (2).png" alt="" class="logo">
+        </div>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group">
+                <p for="firstname">First Name:</p>
+                <input formControlName="firstName" type="text" id="firstname" class="form-control"
+                    placeholder="Enter first name">
+
+                <div class="errors" *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)">
+                    <p *ngIf="userName?.errors?.['required']">User name input is required</p>
+                    <p *ngIf="userName?.errors?.['minlength']">User name must be at least 4 characters long</p>
+                    <p *ngIf="userName?.errors?.['maxlength']">User name must not be more than 17 characters long </p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p for="lastname">Last Name:</p>
+                <input formControlName="lastName" type="text" id="lastname" class="form-control"
+                    placeholder="Enter Last name">
+
+                <div class="errors" *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+                    <p *ngIf="lastName?.errors?.['required']">Last name input is required</p>
+                    <p *ngIf="lastName?.errors?.['minlength']">Last name must be at least 4 characters long</p>
+                    <p *ngIf="lastName?.errors?.['maxlength']">Last name must not be more than 17 characters long </p>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <p for="email-id">Email Id:</p>
+                <input formControlName="email" type="text" id="email-id" class="form-control"
+                    placeholder=" Enter Email Id">
+
+                <div class="errors" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                    <p *ngIf="email?.errors?.['required']">Email Id is required</p>
+                    <p *ngIf="email?.errors?.['email']">Please enter valid Email Id</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p for="mobile">Mobile No.:</p>
+                <input formControlName="mobile" type="text" id="mobile" class="form-control"
+                    placeholder="+995-123-456-789">
+
+                <div class="errors" *ngIf="mobile?.invalid && (mobile?.dirty || mobile?.touched)">
+                    <p *ngIf="mobile?.errors?.['required']">Mobile number is required</p>
+                    <p *ngIf="mobile?.errors?.['pattern']">Mobile number must start with +995</p>
+                    <p *ngIf="mobile?.errors?.['minlength']">Mobile number must be at least 13 characters long</p>
+                    <p *ngIf="mobile?.errors?.['maxlength']">Mobile number must not be more then 13 characters long</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p for="password">Password:</p>
+                <input formControlName="password" type="text" id="password" class="form-control" placeholder="xxxxxxxx">
+                <div class="errors" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                    <p *ngIf="password?.errors?.['required']">Password is required</p>
+                    <p *ngIf="password?.errors?.['pattern']">Password must contain uppercase letter, punctuation mark
+                        and number</p>
+                    <p *ngIf="password?.errors?.['minlength']">Password must be at least 6 characters long</p>
+                    <p *ngIf="password?.errors?.['maxlength']">Password must not be more then 8 characters long</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p for="confirm-pass">Confirm Password:</p>
+                <input formControlName="confirmPassword" type="text" id="confirm-pass" class="form-control"
+                    placeholder="xxxxxxxx">
+
+                <div class="errors" *ngIf="userForm?.invalid && (userForm?.dirty || userForm?.touched)">
+                    <p *ngIf="confirmPassword?.errors?.['required']">Confirm password is required</p>
+                    <p *ngIf="userForm?.errors?.['passwordNotMatch']">Password doesn't match</p>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <p for="company-name">Company Name:</p>
+                <input formControlName="companyName" type="text" id="company-name" class="form-control"
+                    placeholder="Enter company name...">
+
+                <div class="errors" *ngIf="companyName?.invalid && (companyName?.dirty || companyName?.touched)">
+                    <p *ngIf="companyName?.errors?.['required']">Company name is required</p>
+                </div>
+            </div>
+            <div class="submit-btn-container">
+                <button class="btn-signup" type="submit" [disabled]="userForm.invalid || userForm.pristine">Sing
+                    up</button>
+            </div>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="../../assets/photos/sign_up--01 1.png" alt="">
+    </div>
+
+
+</section>
