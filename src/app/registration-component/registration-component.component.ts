@@ -10,7 +10,7 @@ import { AbstractControl } from '@angular/forms';
 })
 export class RegistrationComponentComponent implements OnInit {
 
- 
+
   userForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -57,14 +57,14 @@ export class RegistrationComponentComponent implements OnInit {
 
 export const passwordValidator = (control: AbstractControl) => {
   let password = control.get('password');
-  let confirm_password = control?.get('confirmPassword');
+  let confirmPassword = control?.get('confirmPassword');
 
-  let doesntMatch = password?.value !== confirm_password?.value;
+  let match = password?.value === confirmPassword?.value;
 
-  return doesntMatch ? { passwordNotMatch: true } : null;
+  return match ? null : { passwordNotMatch: true } ;
 }
 
- export class Html2Component {
+export class Html2Component {
 }
 
 

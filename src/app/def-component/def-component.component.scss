@@ -11,15 +11,13 @@ section {
 
 }
 
-.img img {
+.def-img img {
     width: 70%;
-    max-height: 100%;
+    height: 100%;
 }
 
 
-.mainc-content {
-    width: 40%;
-    height: 100%;
+.main-content {
     box-shadow: -28px 0px 50.4863166809082px 0px #0000000D;
     display: flex;
     flex-direction: column;
@@ -44,7 +42,7 @@ button {
 }
 
 input {
-    width: 300px;
+    width: 429.13px;
     height: 50.49px;
     background-color: #EEEEEE;
     border: none;
@@ -54,7 +52,7 @@ input {
 
 .email-btn,
 .lock-btn {
-    width: 45px;
+    width: 50.49px;
     height: 50.49px;
     border-radius: 8.08px;
     background-color: #1E2772;
@@ -71,8 +69,10 @@ input {
 }
 
 .forgot-pass {
-    margin: 25px;
-    text-align: end;
+    margin: 15px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
 }
 
 .btn-login {

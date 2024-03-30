@@ -1,8 +1,10 @@
 <section>
-  <div class="img">
+  <div class="def-img">
     <img src="../../assets/photos/def-image.png" alt="">
   </div>
-  <div class="mainc-content">
+
+  <form action="login-functional" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+  <div class="main-content">
     <img src="../../assets/photos/logo (2).png" alt="" class="logo">
     <div class="email">
       <p class="email-id">Email Id:</p>
@@ -11,6 +13,7 @@
         <button class="email-btn"><img src="../../assets/photos/email.png" alt=""></button>
       </div>
     </div>
+
     <div class="pass">
       <p class="password">Password:</p>
       <div class="pass-input">
@@ -18,12 +21,13 @@
         <button class="lock-btn"><img src="../../assets/photos/pass.png" alt=""></button>
       </div>
     </div>
+
     <div class="forgot-pass"><a href="">Forgot Password?</a></div>
     <div class="buttons">
-      <button class="btn-login" type="submit">Login</button>
+      <button class="btn-login" type="submit" >Login</button>
 
       <button class="btn-signup" (click)="toggleHtml2()">Sign Up</button>
     </div>
   </div>
-
+</form>
 </section>
